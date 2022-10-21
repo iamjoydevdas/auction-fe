@@ -1,0 +1,18 @@
+<p>Smart Seller</p>
+<form>
+
+    Seller Login : <input [(ngModel)]="seller.id" [ngModelOptions]="{standalone: true}" type="text" />
+    <button (click)="singIn()">Login</button>
+</form>
+
+<div *ngIf="res">
+    Name : {{res.info.name}}
+
+    <div *ngIf="res.products.length == 0">No Records Found.</div>
+    <div *ngIf="res.products.length != 0">
+        <div *ngFor="let prd of res.products" style="float: left; margin: 30px">
+            <span >{{prd.productName}}</span>
+        </div>
+
+    </div>
+</div>
